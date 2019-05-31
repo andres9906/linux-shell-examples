@@ -4,4 +4,4 @@ Basic operations with integers using switch, conditionals ,access to command lin
 
 -estausuario
 
-Basic access to files to read them and get particular information from it using regular expressions.
+Basic access to files to read them and get particular information from them using regular expressions.
