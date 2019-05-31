@@ -1,0 +1,48 @@
+clear
+echo "Digite un numero"
+read N
+echo "*********** Menu de Opciones ****************"
+echo "* 1 - Sumar los $N primeros numeros naturales *"
+echo "* 2 - Sumar los $N primeros numeros naturales pares *"
+echo "* 3 - Listar las $N primeras lineas de un directorio *"
+echo "* 4 - Fin *"
+echo "* cualquier otra opcion - salir *"
+echo "* *"
+echo "* Escoger opcion (1/2/3/4) *"
+echo "*******************************************"
+read opcion
+case $opcion in
+
+1) 
+suma=0
+i=0
+while [ $i -le $N ]
+do
+	suma=$((suma+i))
+	i=$((i+1))
+done
+echo "La suma de los primeros $N numeros es $suma";;
+
+2) 
+suma=0
+i=0
+while [ $i -le $N ]
+do	
+	
+	if [ $((i%2)) -eq 0 ]
+	then
+		suma=$((suma+i))
+	fi
+	i=$((i+1))
+done
+echo "La suma de los primeros $N numeros pares es $suma";;
+
+3) echo "Escriba la ruta del directorio a visualizar"
+read direct
+echo
+echo
+ls -l $direct | head -n $N;;
+
+
+4) echo "Saliendo";;
+esac

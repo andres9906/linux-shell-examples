@@ -1,0 +1,16 @@
+clear
+if [ $# -ne 1 ]
+then
+echo se espera un solo parametro, no $#
+exit
+fi
+
+res="$(grep -e '^'$1':' /etc/passwd)"
+if [ -z "$res" ]
+then
+	echo "No existe el usuario '$1'"
+else
+	echo "El grupo del usuario '$1' es:"
+	grep -e '^'$1':' /etc/passwd | awk -F":" '{ print $4 }'
+fi
+
